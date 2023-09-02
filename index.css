@@ -18,8 +18,12 @@ body{
 
 @media screen and (max-width:992px){
  .form-container{
-  font-size: 23px;
+  font-size: 30px;
   width: 100%;
+ }
+
+   .form-container img{
+ width:200px;
  }
 }
 
@@ -37,6 +41,7 @@ border: 1px solid #d5dadd;
 padding: 10px;
 border-radius: 5px;
 outline: none;
+height: 70px;
 }
 
 .btne{
@@ -53,3 +58,4 @@ outline: none;
 span{
   font-size: 13px;
 }
+
