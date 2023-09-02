@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/work.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="logo">
+        <img src="pics/logo.png" width="60" alt="">
+        <!-- <p>Harvestime Assembly Church Of God Missions</p> -->
+      </div>
+      <div class="header">
+        <h1>Welcome</h1>
+        <p>to Harvestime Assembly Church. Please help us fill this form.thank you</p>
+      </div>
+
+      <form name="submit-to-google-sheet">
+        <div>
+          <label >first Name</label>
+          <input type="text" name="firstname">
+        </div>
+
+        <div>
+          <label>address</label><br>
+          <input type="text" name="address">
+        </div>
+
+        <div>
+          <label>Phone number</label><br>
+          <input type="text" name="number">
+        </div>
+
+        <div>
+          <label>City</label><br>
+          <input type="text" name="city">
+        </div>
+
+        <div>
+          <label>Email address</label><br>
+          <input type="email" name="email">
+        </div>
+        <br>
+       <div>
+        <button class="btne" type="submit">Submit</button>
+        <span id="msg"></span>
+       </div>
+       <br>
+       <p>  The lord your God is in your midst - a warrior bringing victory. He will create calm with his love; he will rejoice over you with singing - ZEPHANIAH 3:17
+       </p>
+      </form>
+    </div>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyCVxAkA5lrKqcQyvmuVWVvX2etiacfFkf-xd1xcGXxkUQM76K8fbTpJOfYNS0emh9o/exec'
+      const form = document.forms['submit-to-google-sheet']
+      let msg = document.getElementById('msg')
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHtml = ('helllo bro')
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  </body>
+</html>
